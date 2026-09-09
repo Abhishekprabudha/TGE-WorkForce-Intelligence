@@ -1,0 +1,14 @@
+{
+  "site": "Sydney West Depot",
+  "date": "Thursday, 17 Sep",
+  "forecastItems": 18420,
+  "normalDeltaPct": 12.4,
+  "forecastConfidencePct": 93,
+  "currentLabourHours": 142,
+  "requiredLabourHours": 131,
+  "overtimeAtRiskHours": 7.5,
+  "serviceConfidencePct": 98.4,
+  "dailyOpportunityAud": 1860,
+  "validated30DayAud": 73400,
+  "annualisedAud": 881000
+}
