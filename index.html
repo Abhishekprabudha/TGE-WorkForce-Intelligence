@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d201d" />
+  <title>TGE Flow — Predictive Operations & Workforce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <div class="brand-name">TGE Flow</div>
+          <div class="brand-sub">Predictive operations & workforce</div>
+        </div>
+      </div>
+
+      <div class="site-chip">
+        <span class="status-dot"></span>
+        <div>
+          <strong>Sydney West Depot</strong>
+          <small>Planning mode · Synthetic demo</small>
+        </div>
+      </div>
+
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span><span>Tomorrow's depot</span></button>
+        <button class="nav-item" data-view="forecast"><span class="nav-icon">↗</span><span>Demand forecast</span></button>
+        <button class="nav-item" data-view="workload"><span class="nav-icon">▦</span><span>Workload</span></button>
+        <button class="nav-item" data-view="workforce"><span class="nav-icon">≋</span><span>Workforce plan</span></button>
+        <button class="nav-item" data-view="actions"><span class="nav-icon">✓</span><span>Action queue</span><span class="nav-count">3</span></button>
+        <button class="nav-item" data-view="scenarios"><span class="nav-icon">◫</span><span>Scenarios</span></button>
+        <button class="nav-item" data-view="value"><span class="nav-icon">$</span><span>Value tracker</span></button>
+        <button class="nav-item" data-view="scale"><span class="nav-icon">∞</span><span>Scale pattern</span></button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="trust-card">
+        <span class="trust-icon">◉</span>
+        <div>
+          <strong>Read-only pilot</strong>
+          <small>No write-back. Every change stays human approved.</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Operations planning · Thursday, 17 Sep</div>
+          <h1 id="pageTitle">Tomorrow's depot</h1>
+        </div>
+        <div class="top-actions">
+          <div class="demo-badge"><span></span>Synthetic demo data</div>
+          <button class="btn secondary" id="resetBtn">Reset demo</button>
+          <button class="btn primary" id="guidedBtn">Start guided demo</button>
+        </div>
+      </header>
+
+      <section id="guidedStrip" class="guided-strip hidden" aria-live="polite">
+        <div class="guided-step">
+          <span id="guidedStepNo">1</span>
+          <div>
+            <strong id="guidedTitle">View tomorrow</strong>
+            <small id="guidedCopy">Start with the operating picture, not yesterday's report.</small>
+          </div>
+        </div>
+        <button class="btn primary compact" id="guidedAction">View Tomorrow</button>
+        <button class="icon-btn" id="closeGuided" aria-label="Close guided demo">×</button>
+      </section>
+
+      <div id="appContent"></div>
+    </main>
+  </div>
+
+  <dialog id="actionDialog" class="dialog"></dialog>
+  <dialog id="simDialog" class="dialog wide"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
