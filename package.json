@@ -1,0 +1,11 @@
+{
+  "name": "tge-workforce-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TGE Flow — predictive operations & workforce decision agent (pilot build, synthetic data)",
+  "scripts": {
+    "generate": "python3 data/generator/generate_pilot_data.py",
+    "test": "node --test tests/engine.test.js",
+    "start": "python3 -m http.server 8080"
+  }
+}

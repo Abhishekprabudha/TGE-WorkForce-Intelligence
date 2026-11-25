@@ -1,0 +1,10 @@
+trailer,origin,distance_km,transit_h,sched_arrival,items,pallets,delay_risk
+IN-01,Melbourne (VIC),880,10.0,03:05,1256,37,Medium
+IN-02,Melbourne (VIC),880,10.0,04:20,1111,33,Medium
+IN-03,Brisbane (QLD),920,11.0,03:35,1159,34,Medium
+IN-04,Brisbane (QLD),920,11.0,05:30,918,27,Medium
+IN-05,Adelaide (SA),1375,16.5,06:40,724,21,High
+IN-06,Canberra (ACT),290,3.5,04:10,579,17,Low
+IN-07,Newcastle (NSW),165,2.5,05:05,628,18,Low
+IN-08,Wollongong (NSW),85,1.5,09:40,386,11,Low
+IN-09,Sydney Hub transfer,30,0.7,11:10,579,17,Low

@@ -1,0 +1,23 @@
+{
+  "name": "Sydney West Depot",
+  "code": "SWD",
+  "pilot_role": "Pilot site (synthetic)",
+  "location": "Western Sydney industrial belt (M4/M7 corridor), NSW",
+  "profile": "Medium metro depot \u2014 B2B express cartons & freight, e-commerce parcels, pickup & delivery (P&D) runs",
+  "operating_hours": "03:00\u201322:30 Mon\u2013Fri \u00b7 reduced Saturday \u00b7 closed Sunday",
+  "dock_doors": {
+    "inbound": 10,
+    "outbound": 12,
+    "pd_bays": 24
+  },
+  "pd_runs": 46,
+  "sort": "Conveyor-assisted manual sort (no automated sorter)",
+  "headcount": {},
+  "why_pilot": [
+    "Medium size: large enough for measurable savings, small enough for a 6\u20138 week proof",
+    "Two daily waves (overnight linehaul \u2192 P&D runs; afternoon pickups \u2192 outbound linehaul) exercise every planning decision",
+    "Mixed freight (cartons, parcels, pallets, DG) tests the workload translator, not just a parcel count",
+    "Exposed to the Black Friday \u2192 Christmas peak, so value is visible within the pilot window",
+    "Multi-lane linehaul (MEL, BNE, ADL, CBR, regional NSW) creates realistic arrival-delay risk"
+  ]
+}
