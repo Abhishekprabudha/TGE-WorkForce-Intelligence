@@ -1,0 +1,3879 @@
+{
+ "meta": {
+  "generator": "data/generator/generate_pilot_data.py",
+  "seed": 20261126,
+  "generated_for": "2026-11-25 planning cycle",
+  "planning_day": "2026-11-25",
+  "target_day": "2026-11-26",
+  "history_start": "2024-07-01",
+  "synthetic": true
+ },
+ "depot": {
+  "name": "Sydney West Depot",
+  "code": "SWD",
+  "pilot_role": "Pilot site (synthetic)",
+  "location": "Western Sydney industrial belt (M4/M7 corridor), NSW",
+  "profile": "Medium metro depot — B2B express cartons & freight, e-commerce parcels, pickup & delivery (P&D) runs",
+  "operating_hours": "03:00–22:30 Mon–Fri · reduced Saturday · closed Sunday",
+  "dock_doors": {
+   "inbound": 10,
+   "outbound": 12,
+   "pd_bays": 24
+  },
+  "pd_runs": 46,
+  "sort": "Conveyor-assisted manual sort (no automated sorter)",
+  "headcount": {
+   "permanent": 22,
+   "casual": 18,
+   "agency": 23
+  },
+  "why_pilot": [
+   "Medium size: large enough for measurable savings, small enough for a 6–8 week proof",
+   "Two daily waves (overnight linehaul → P&D runs; afternoon pickups → outbound linehaul) exercise every planning decision",
+   "Mixed freight (cartons, parcels, pallets, DG) tests the workload translator, not just a parcel count",
+   "Exposed to the Black Friday → Christmas peak, so value is visible within the pilot window",
+   "Multi-lane linehaul (MEL, BNE, ADL, CBR, regional NSW) creates realistic arrival-delay risk"
+  ]
+ },
+ "rates": {
+  "permanent": 48,
+  "casual": 52.8,
+  "agency": 60,
+  "overtime": 72,
+  "overtime_premium": 24,
+  "agency_premium": 12,
+  "casual_premium": 4.8,
+  "rework_case": 45,
+  "early_start_loading": 4.6,
+  "late_item_service_cost": 1.1
+ },
+ "standards": [
+  {
+   "function": "Inbound",
+   "task": "Unload linehaul / pickup vans (loose)",
+   "driver": "items",
+   "rate": 330,
+   "source": "Time-study style standard; floor-loaded cartons & parcels"
+  },
+  {
+   "function": "Sortation",
+   "task": "Manual/conveyor-assisted sort to run & lane",
+   "driver": "items",
+   "rate": 182,
+   "source": "Typical semi-automated depot sort, mixed B2B/B2C"
+  },
+  {
+   "function": "Sortation",
+   "task": "Exceptions, rework & returns",
+   "driver": "exception items",
+   "rate": 31,
+   "source": "Unreadable labels, mis-sorts, damaged freight, returns (~5% of items)"
+  },
+  {
+   "function": "Dock/Yard",
+   "task": "Forklift pallets & oversize",
+   "driver": "pallets",
+   "rate": 14,
+   "source": "LF-licensed forklift handling incl. scan & stage"
+  },
+  {
+   "function": "Dock/Yard",
+   "task": "Trailer marshalling / yard move",
+   "driver": "trailers",
+   "rate": 2.5,
+   "source": "Yard jockey move incl. seal & check"
+  },
+  {
+   "function": "Dock/Yard",
+   "task": "Dangerous goods / special handling",
+   "driver": "special items",
+   "rate": 45,
+   "source": "DG segregation & documentation"
+  },
+  {
+   "function": "Linehaul",
+   "task": "Load outbound linehaul trailers",
+   "driver": "items",
+   "rate": 287,
+   "source": "Load-to-trailer incl. manifest scan"
+  },
+  {
+   "function": "Last mile",
+   "task": "Stage & load-assist P&D delivery runs",
+   "driver": "items (45% not self-loaded by drivers)",
+   "rate": 249,
+   "source": "Run staging in drop sequence; drivers self-load ~55%"
+  }
+ ],
+ "pfd_allowance": 0.12,
+ "exception_rate": 0.05,
+ "driver_self_load_share": 0.55,
+ "history": {
+  "dates": [
+   "2026-09-16",
+   "2026-09-17",
+   "2026-09-18",
+   "2026-09-19",
+   "2026-09-21",
+   "2026-09-22",
+   "2026-09-23",
+   "2026-09-24",
+   "2026-09-25",
+   "2026-09-26",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01",
+   "2026-10-02",
+   "2026-10-03",
+   "2026-10-06",
+   "2026-10-07",
+   "2026-10-08",
+   "2026-10-09",
+   "2026-10-10",
+   "2026-10-12",
+   "2026-10-13",
+   "2026-10-14",
+   "2026-10-15",
+   "2026-10-16",
+   "2026-10-17",
+   "2026-10-19",
+   "2026-10-20",
+   "2026-10-21",
+   "2026-10-22",
+   "2026-10-23",
+   "2026-10-24",
+   "2026-10-26",
+   "2026-10-27",
+   "2026-10-28",
+   "2026-10-29",
+   "2026-10-30",
+   "2026-10-31",
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-04",
+   "2026-11-05",
+   "2026-11-06",
+   "2026-11-07",
+   "2026-11-09",
+   "2026-11-10",
+   "2026-11-11",
+   "2026-11-12",
+   "2026-11-13",
+   "2026-11-14",
+   "2026-11-16",
+   "2026-11-17",
+   "2026-11-18",
+   "2026-11-19",
+   "2026-11-20",
+   "2026-11-21",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25"
+  ],
+  "total": [
+   12833,
+   13386,
+   14817,
+   2830,
+   13123,
+   13446,
+   12112,
+   15550,
+   12884,
+   2634,
+   13801,
+   13359,
+   13234,
+   15408,
+   13293,
+   2911,
+   16445,
+   13314,
+   13399,
+   12481,
+   2348,
+   13847,
+   13892,
+   14557,
+   14157,
+   12766,
+   2708,
+   15016,
+   15488,
+   14205,
+   14382,
+   13656,
+   3266,
+   16814,
+   14757,
+   14611,
+   15761,
+   14430,
+   2871,
+   15565,
+   15161,
+   13804,
+   17749,
+   13170,
+   2955,
+   15248,
+   13995,
+   17494,
+   18398,
+   14631,
+   3317,
+   15981,
+   15066,
+   14376,
+   17015,
+   14750,
+   2828,
+   17307,
+   13285,
+   15827
+  ]
+ },
+ "forecast": [
+  {
+   "date": "2026-11-26",
+   "p10": 17156,
+   "p50": 18361,
+   "p90": 19722,
+   "event": "Pre-Black Friday stock positioning"
+  },
+  {
+   "date": "2026-11-27",
+   "p10": 14112,
+   "p50": 15138,
+   "p90": 16301,
+   "event": "Black Friday"
+  },
+  {
+   "date": "2026-11-28",
+   "p10": 3399,
+   "p50": 3655,
+   "p90": 3946,
+   "event": "Black Friday weekend"
+  },
+  {
+   "date": "2026-11-30",
+   "p10": 19110,
+   "p50": 20598,
+   "p90": 22292,
+   "event": "Cyber Monday"
+  },
+  {
+   "date": "2026-12-01",
+   "p10": 18546,
+   "p50": 20037,
+   "p90": 21740,
+   "event": "Cyber week"
+  },
+  {
+   "date": "2026-12-02",
+   "p10": 16984,
+   "p50": 18393,
+   "p90": 20006,
+   "event": "Cyber week"
+  },
+  {
+   "date": "2026-12-03",
+   "p10": 16993,
+   "p50": 18447,
+   "p90": 20115,
+   "event": "Cyber week"
+  },
+  {
+   "date": "2026-12-04",
+   "p10": 14379,
+   "p50": 15646,
+   "p90": 17103,
+   "event": "Cyber week"
+  },
+  {
+   "date": "2026-12-05",
+   "p10": 2830,
+   "p50": 3087,
+   "p90": 3383,
+   "event": ""
+  },
+  {
+   "date": "2026-12-07",
+   "p10": 15671,
+   "p50": 17133,
+   "p90": 18823,
+   "event": ""
+  },
+  {
+   "date": "2026-12-08",
+   "p10": 14685,
+   "p50": 16094,
+   "p90": 17725,
+   "event": ""
+  },
+  {
+   "date": "2026-12-09",
+   "p10": 14472,
+   "p50": 15898,
+   "p90": 17553,
+   "event": ""
+  }
+ ],
+ "tomorrow": {
+  "date": "2026-11-26",
+  "p10": 17156,
+  "p50": 18361,
+  "p90": 19722,
+  "typical_thursday": 15428,
+  "delta_pct": 19,
+  "drivers": [
+   [
+    "Pre-Black Friday stock positioning",
+    5.6
+   ],
+   [
+    "Customer manifests & booked pickups (EDI)",
+    1.7
+   ],
+   [
+    "Peak-season ramp (Nov–Dec seasonality)",
+    11
+   ],
+   [
+    "New national homewares account (from 12 Oct)",
+    1.1
+   ],
+   [
+    "Underlying volume growth",
+    0.6
+   ],
+   [
+    "Other effects (recent run-rate)",
+    -1.1
+   ]
+  ],
+  "mix": {
+   "b2b_cartons": 0.555,
+   "ecom_parcels": 0.375,
+   "pallets_oversize": 0.034,
+   "special_handling": 0.012
+  },
+  "morning_share": 0.4,
+  "inbound_trailers": [
+   {
+    "trailer": "IN-01",
+    "origin": "Melbourne (VIC)",
+    "distance_km": 880,
+    "transit_h": 10,
+    "sched_arrival": "03:05",
+    "items": 1256,
+    "pallets": 37,
+    "delay_risk": "Medium"
+   },
+   {
+    "trailer": "IN-02",
+    "origin": "Melbourne (VIC)",
+    "distance_km": 880,
+    "transit_h": 10,
+    "sched_arrival": "04:20",
+    "items": 1111,
+    "pallets": 33,
+    "delay_risk": "Medium"
+   },
+   {
+    "trailer": "IN-03",
+    "origin": "Brisbane (QLD)",
+    "distance_km": 920,
+    "transit_h": 11,
+    "sched_arrival": "03:35",
+    "items": 1159,
+    "pallets": 34,
+    "delay_risk": "Medium"
+   },
+   {
+    "trailer": "IN-04",
+    "origin": "Brisbane (QLD)",
+    "distance_km": 920,
+    "transit_h": 11,
+    "sched_arrival": "05:30",
+    "items": 918,
+    "pallets": 27,
+    "delay_risk": "Medium"
+   },
+   {
+    "trailer": "IN-05",
+    "origin": "Adelaide (SA)",
+    "distance_km": 1375,
+    "transit_h": 16.5,
+    "sched_arrival": "06:40",
+    "items": 724,
+    "pallets": 21,
+    "delay_risk": "High"
+   },
+   {
+    "trailer": "IN-06",
+    "origin": "Canberra (ACT)",
+    "distance_km": 290,
+    "transit_h": 3.5,
+    "sched_arrival": "04:10",
+    "items": 579,
+    "pallets": 17,
+    "delay_risk": "Low"
+   },
+   {
+    "trailer": "IN-07",
+    "origin": "Newcastle (NSW)",
+    "distance_km": 165,
+    "transit_h": 2.5,
+    "sched_arrival": "05:05",
+    "items": 628,
+    "pallets": 18,
+    "delay_risk": "Low"
+   },
+   {
+    "trailer": "IN-08",
+    "origin": "Wollongong (NSW)",
+    "distance_km": 85,
+    "transit_h": 1.5,
+    "sched_arrival": "09:40",
+    "items": 386,
+    "pallets": 11,
+    "delay_risk": "Low"
+   },
+   {
+    "trailer": "IN-09",
+    "origin": "Sydney Hub transfer",
+    "distance_km": 30,
+    "transit_h": 0.7,
+    "sched_arrival": "11:10",
+    "items": 579,
+    "pallets": 17,
+    "delay_risk": "Low"
+   }
+  ],
+  "pickups": {
+   "9": 330,
+   "10": 550,
+   "11": 771,
+   "12": 991,
+   "13": 1211,
+   "14": 1542,
+   "15": 1982,
+   "16": 1872,
+   "17": 1211,
+   "18": 550
+  },
+  "outbound": [
+   {
+    "trailer": "OUT-01",
+    "destination": "Melbourne (VIC)",
+    "departure": "18:30"
+   },
+   {
+    "trailer": "OUT-02",
+    "destination": "Brisbane (QLD)",
+    "departure": "19:00"
+   },
+   {
+    "trailer": "OUT-03",
+    "destination": "Canberra (ACT)",
+    "departure": "19:30"
+   },
+   {
+    "trailer": "OUT-04",
+    "destination": "Melbourne (VIC)",
+    "departure": "20:15"
+   },
+   {
+    "trailer": "OUT-05",
+    "destination": "Adelaide (SA)",
+    "departure": "20:00"
+   },
+   {
+    "trailer": "OUT-06",
+    "destination": "Newcastle (NSW)",
+    "departure": "20:30"
+   },
+   {
+    "trailer": "OUT-07",
+    "destination": "Brisbane (QLD)",
+    "departure": "21:00"
+   },
+   {
+    "trailer": "OUT-08",
+    "destination": "Sydney Hub transfer",
+    "departure": "21:30"
+   }
+  ]
+ },
+ "typical": {
+  "volume": 17279,
+  "morning_share": 0.45,
+  "buffer_pct": 12,
+  "mix": {
+   "b2b_cartons": 0.618,
+   "ecom_parcels": 0.3,
+   "pallets_oversize": 0.046,
+   "special_handling": 0.014
+  },
+  "basis": "Recent normal-Thursday average × 1.12 blanket Black Friday-week buffer, typical arrival shape (45% overnight linehaul)"
+ },
+ "roster": [
+  {
+   "id": "SWD-P001",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 31
+  },
+  {
+   "id": "SWD-P002",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 46
+  },
+  {
+   "id": "SWD-P003",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 7
+  },
+  {
+   "id": "SWD-P004",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 86
+  },
+  {
+   "id": "SWD-P005",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 3
+  },
+  {
+   "id": "SWD-P006",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 90
+  },
+  {
+   "id": "SWD-P007",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "03:00",
+   "start": 3,
+   "end": 11.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Linehaul"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 85
+  },
+  {
+   "id": "SWD-C001",
+   "home": "Dock/Yard",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 64
+  },
+  {
+   "id": "SWD-A001",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 5
+  },
+  {
+   "id": "SWD-C002",
+   "home": "Sortation",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 3
+  },
+  {
+   "id": "SWD-C003",
+   "home": "Dock/Yard",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 91
+  },
+  {
+   "id": "SWD-A002",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 5
+  },
+  {
+   "id": "SWD-C004",
+   "home": "Sortation",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-C005",
+   "home": "Dock/Yard",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 92
+  },
+  {
+   "id": "SWD-C006",
+   "home": "Sortation",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Linehaul",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 21
+  },
+  {
+   "id": "SWD-C007",
+   "home": "Inbound",
+   "contract": "casual",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 89
+  },
+  {
+   "id": "SWD-A003",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Sortation"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-A004",
+   "home": "Sortation",
+   "contract": "agency",
+   "shift": "03:00",
+   "start": 3,
+   "end": 7,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-A005",
+   "home": "Last mile",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Last mile"
+   ],
+   "licences": [],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-A006",
+   "home": "Sortation",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-A007",
+   "home": "Last mile",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Last mile",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 2
+  },
+  {
+   "id": "SWD-A008",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-C008",
+   "home": "Sortation",
+   "contract": "casual",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 53
+  },
+  {
+   "id": "SWD-A009",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 2
+  },
+  {
+   "id": "SWD-A010",
+   "home": "Last mile",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Last mile",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 3
+  },
+  {
+   "id": "SWD-A011",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 8
+  },
+  {
+   "id": "SWD-C009",
+   "home": "Sortation",
+   "contract": "casual",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 46
+  },
+  {
+   "id": "SWD-A012",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 3
+  },
+  {
+   "id": "SWD-A013",
+   "home": "Last mile",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Last mile",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 8
+  },
+  {
+   "id": "SWD-A014",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-C010",
+   "home": "Inbound",
+   "contract": "casual",
+   "shift": "04:00",
+   "start": 4,
+   "end": 10.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation",
+    "Last mile"
+   ],
+   "licences": [],
+   "tenure_months": 46
+  },
+  {
+   "id": "SWD-A015",
+   "home": "Sortation",
+   "contract": "agency",
+   "shift": "04:00",
+   "start": 4,
+   "end": 8,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 0
+  },
+  {
+   "id": "SWD-C011",
+   "home": "Last mile",
+   "contract": "casual",
+   "shift": "05:00",
+   "start": 5,
+   "end": 9,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Last mile",
+    "Sortation",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 55
+  },
+  {
+   "id": "SWD-P008",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "10:00",
+   "start": 10,
+   "end": 18.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 67
+  },
+  {
+   "id": "SWD-P009",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "10:00",
+   "start": 10,
+   "end": 18.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 39
+  },
+  {
+   "id": "SWD-P010",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "10:00",
+   "start": 10,
+   "end": 18.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul",
+    "Last mile",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 5
+  },
+  {
+   "id": "SWD-P011",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "10:00",
+   "start": 10,
+   "end": 18.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 39
+  },
+  {
+   "id": "SWD-C012",
+   "home": "Dock/Yard",
+   "contract": "casual",
+   "shift": "10:00",
+   "start": 10,
+   "end": 16.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound",
+    "Linehaul"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 72
+  },
+  {
+   "id": "SWD-P012",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 22,
+   "planned_ot_hours": 2.5,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul",
+    "Last mile"
+   ],
+   "licences": [],
+   "tenure_months": 88
+  },
+  {
+   "id": "SWD-P013",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 22,
+   "planned_ot_hours": 2.5,
+   "skills": [
+    "Sortation",
+    "Inbound",
+    "Linehaul",
+    "Last mile",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 34
+  },
+  {
+   "id": "SWD-P014",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 22,
+   "planned_ot_hours": 2.5,
+   "skills": [
+    "Dock/Yard",
+    "Inbound"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 31
+  },
+  {
+   "id": "SWD-P015",
+   "home": "Inbound",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation",
+    "Last mile"
+   ],
+   "licences": [],
+   "tenure_months": 48
+  },
+  {
+   "id": "SWD-P016",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 20
+  },
+  {
+   "id": "SWD-P017",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-P018",
+   "home": "Inbound",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation",
+    "Last mile"
+   ],
+   "licences": [],
+   "tenure_months": 21
+  },
+  {
+   "id": "SWD-P019",
+   "home": "Sortation",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 57
+  },
+  {
+   "id": "SWD-P020",
+   "home": "Linehaul",
+   "contract": "permanent",
+   "shift": "11:00",
+   "start": 11,
+   "end": 19.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Dock/Yard"
+   ],
+   "licences": [],
+   "tenure_months": 70
+  },
+  {
+   "id": "SWD-C013",
+   "home": "Inbound",
+   "contract": "casual",
+   "shift": "11:00",
+   "start": 11,
+   "end": 17.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 79
+  },
+  {
+   "id": "SWD-P021",
+   "home": "Linehaul",
+   "contract": "permanent",
+   "shift": "12:00",
+   "start": 12,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 36
+  },
+  {
+   "id": "SWD-P022",
+   "home": "Dock/Yard",
+   "contract": "permanent",
+   "shift": "12:00",
+   "start": 12,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Inbound"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 75
+  },
+  {
+   "id": "SWD-A016",
+   "home": "Sortation",
+   "contract": "agency",
+   "shift": "12:00",
+   "start": 12,
+   "end": 16,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-A017",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "13:00",
+   "start": 13,
+   "end": 17,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-C014",
+   "home": "Linehaul",
+   "contract": "casual",
+   "shift": "14:00",
+   "start": 14,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 9
+  },
+  {
+   "id": "SWD-A018",
+   "home": "Sortation",
+   "contract": "agency",
+   "shift": "14:00",
+   "start": 14,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Sortation",
+    "Inbound"
+   ],
+   "licences": [],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-A019",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "14:00",
+   "start": 14,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard",
+    "Sortation"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 9
+  },
+  {
+   "id": "SWD-A020",
+   "home": "Linehaul",
+   "contract": "agency",
+   "shift": "14:00",
+   "start": 14,
+   "end": 20.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 4
+  },
+  {
+   "id": "SWD-A021",
+   "home": "Inbound",
+   "contract": "agency",
+   "shift": "14:00",
+   "start": 14,
+   "end": 18,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Inbound",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 2
+  },
+  {
+   "id": "SWD-A022",
+   "home": "Linehaul",
+   "contract": "agency",
+   "shift": "15:00",
+   "start": 15,
+   "end": 21.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 5
+  },
+  {
+   "id": "SWD-C015",
+   "home": "Linehaul",
+   "contract": "casual",
+   "shift": "15:00",
+   "start": 15,
+   "end": 21.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 47
+  },
+  {
+   "id": "SWD-C016",
+   "home": "Linehaul",
+   "contract": "casual",
+   "shift": "15:00",
+   "start": 15,
+   "end": 21.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation"
+   ],
+   "licences": [],
+   "tenure_months": 74
+  },
+  {
+   "id": "SWD-A023",
+   "home": "Dock/Yard",
+   "contract": "agency",
+   "shift": "15:00",
+   "start": 15,
+   "end": 21.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)",
+    "DG awareness"
+   ],
+   "tenure_months": 6
+  },
+  {
+   "id": "SWD-C017",
+   "home": "Linehaul",
+   "contract": "casual",
+   "shift": "16:00",
+   "start": 16,
+   "end": 22.5,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul",
+    "Sortation",
+    "Dock/Yard"
+   ],
+   "licences": [
+    "Forklift (LF)"
+   ],
+   "tenure_months": 61
+  },
+  {
+   "id": "SWD-C018",
+   "home": "Linehaul",
+   "contract": "casual",
+   "shift": "18:00",
+   "start": 18,
+   "end": 22,
+   "no_break": true,
+   "planned_ot_hours": 0,
+   "skills": [
+    "Linehaul"
+   ],
+   "licences": [],
+   "tenure_months": 44
+  }
+ ],
+ "backtest": {
+  "summary": {
+   "window_operating_days": 300,
+   "model_mape": 4.24,
+   "planner_mape": 9.08,
+   "model_bias_pct": 0.03,
+   "planner_bias_pct": 0.57,
+   "p10_p90_coverage_pct": 80.7,
+   "weekday_model_mape": 4.31,
+   "weekday_planner_mape": 9.13
+  },
+  "dates": [
+   "2026-09-16",
+   "2026-09-17",
+   "2026-09-18",
+   "2026-09-19",
+   "2026-09-21",
+   "2026-09-22",
+   "2026-09-23",
+   "2026-09-24",
+   "2026-09-25",
+   "2026-09-26",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01",
+   "2026-10-02",
+   "2026-10-03",
+   "2026-10-06",
+   "2026-10-07",
+   "2026-10-08",
+   "2026-10-09",
+   "2026-10-10",
+   "2026-10-12",
+   "2026-10-13",
+   "2026-10-14",
+   "2026-10-15",
+   "2026-10-16",
+   "2026-10-17",
+   "2026-10-19",
+   "2026-10-20",
+   "2026-10-21",
+   "2026-10-22",
+   "2026-10-23",
+   "2026-10-24",
+   "2026-10-26",
+   "2026-10-27",
+   "2026-10-28",
+   "2026-10-29",
+   "2026-10-30",
+   "2026-10-31",
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-04",
+   "2026-11-05",
+   "2026-11-06",
+   "2026-11-07",
+   "2026-11-09",
+   "2026-11-10",
+   "2026-11-11",
+   "2026-11-12",
+   "2026-11-13",
+   "2026-11-14",
+   "2026-11-16",
+   "2026-11-17",
+   "2026-11-18",
+   "2026-11-19",
+   "2026-11-20",
+   "2026-11-21",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25"
+  ],
+  "actual": [
+   12833,
+   13386,
+   14817,
+   2830,
+   13123,
+   13446,
+   12112,
+   15550,
+   12884,
+   2634,
+   13801,
+   13359,
+   13234,
+   15408,
+   13293,
+   2911,
+   16445,
+   13314,
+   13399,
+   12481,
+   2348,
+   13847,
+   13892,
+   14557,
+   14157,
+   12766,
+   2708,
+   15016,
+   15488,
+   14205,
+   14382,
+   13656,
+   3266,
+   16814,
+   14757,
+   14611,
+   15761,
+   14430,
+   2871,
+   15565,
+   15161,
+   13804,
+   17749,
+   13170,
+   2955,
+   15248,
+   13995,
+   17494,
+   18398,
+   14631,
+   3317,
+   15981,
+   15066,
+   14376,
+   17015,
+   14750,
+   2828,
+   17307,
+   13285,
+   15827
+  ],
+  "model": [
+   13494,
+   13214,
+   13849,
+   2825,
+   14226,
+   13656,
+   12733,
+   14836,
+   12597,
+   2514,
+   14560,
+   13404,
+   12513,
+   15381,
+   12998,
+   2765,
+   16609,
+   13698,
+   13964,
+   12916,
+   2528,
+   14762,
+   13662,
+   13706,
+   14788,
+   13683,
+   2832,
+   16026,
+   15258,
+   15621,
+   13733,
+   13204,
+   3055,
+   16534,
+   13573,
+   14006,
+   15088,
+   13677,
+   2904,
+   16577,
+   15253,
+   14405,
+   18494,
+   14031,
+   3185,
+   16347,
+   15281,
+   17985,
+   15508,
+   15772,
+   3304,
+   16393,
+   16001,
+   14615,
+   17839,
+   15120,
+   2839,
+   18039,
+   15775,
+   16350
+  ],
+  "planner": [
+   13765,
+   12960,
+   12216,
+   2470,
+   14525,
+   13278,
+   13736,
+   12916,
+   12961,
+   2568,
+   14264,
+   13280,
+   13400,
+   13442,
+   12754,
+   2578,
+   13348,
+   13262,
+   14008,
+   13538,
+   2722,
+   14166,
+   13348,
+   12873,
+   14436,
+   13369,
+   2681,
+   14014,
+   13521,
+   13304,
+   14628,
+   12856,
+   2650,
+   13947,
+   14046,
+   13828,
+   14336,
+   13049,
+   2808,
+   14870,
+   14374,
+   14172,
+   14425,
+   13333,
+   2798,
+   15310,
+   14824,
+   14294,
+   15512,
+   13506,
+   2950,
+   15661,
+   14850,
+   15028,
+   16572,
+   13972,
+   3102,
+   15902,
+   14745,
+   15071
+  ]
+ },
+ "labour_recent": [
+  {
+   "date": "2026-10-22",
+   "items": 14382,
+   "planned_hours": 256.6,
+   "required_hours": 240.1,
+   "paid_hours": 264.4,
+   "overtime_hours": 15.4,
+   "agency_hours": 28.2,
+   "idle_hours": 19.1,
+   "absences": 1,
+   "backlog_items": 41,
+   "rework_cases": 1,
+   "labour_cost_aud": 13595,
+   "items_per_paid_hour": 54.4,
+   "cost_per_item_aud": 0.953,
+   "ontime_dispatch_pct": 98.52
+  },
+  {
+   "date": "2026-10-23",
+   "items": 13656,
+   "planned_hours": 225.5,
+   "required_hours": 238,
+   "paid_hours": 251.5,
+   "overtime_hours": 19.8,
+   "agency_hours": 31,
+   "idle_hours": 11.3,
+   "absences": 0,
+   "backlog_items": 0,
+   "rework_cases": 3,
+   "labour_cost_aud": 13190,
+   "items_per_paid_hour": 54.3,
+   "cost_per_item_aud": 0.967,
+   "ontime_dispatch_pct": 99.18
+  },
+  {
+   "date": "2026-10-24",
+   "items": 3266,
+   "planned_hours": 110,
+   "required_hours": 99,
+   "paid_hours": 109,
+   "overtime_hours": 6.6,
+   "agency_hours": 12.1,
+   "idle_hours": 7.9,
+   "absences": 1,
+   "backlog_items": 73,
+   "rework_cases": 0,
+   "labour_cost_aud": 5596,
+   "items_per_paid_hour": 30,
+   "cost_per_item_aud": 1.724,
+   "ontime_dispatch_pct": 96.77
+  },
+  {
+   "date": "2026-10-26",
+   "items": 16814,
+   "planned_hours": 244.7,
+   "required_hours": 297,
+   "paid_hours": 303,
+   "overtime_hours": 43.1,
+   "agency_hours": 49.7,
+   "idle_hours": 12.2,
+   "absences": 1,
+   "backlog_items": 502,
+   "rework_cases": 2,
+   "labour_cost_aud": 16407,
+   "items_per_paid_hour": 55.5,
+   "cost_per_item_aud": 0.983,
+   "ontime_dispatch_pct": 95.65
+  },
+  {
+   "date": "2026-10-27",
+   "items": 14757,
+   "planned_hours": 246.4,
+   "required_hours": 256.8,
+   "paid_hours": 271.6,
+   "overtime_hours": 27.6,
+   "agency_hours": 39.9,
+   "idle_hours": 12.3,
+   "absences": 2,
+   "backlog_items": 0,
+   "rework_cases": 5,
+   "labour_cost_aud": 14540,
+   "items_per_paid_hour": 54.3,
+   "cost_per_item_aud": 0.981,
+   "ontime_dispatch_pct": 99.34
+  },
+  {
+   "date": "2026-10-28",
+   "items": 14611,
+   "planned_hours": 242.6,
+   "required_hours": 254.4,
+   "paid_hours": 268.9,
+   "overtime_hours": 31.9,
+   "agency_hours": 44,
+   "idle_hours": 12.1,
+   "absences": 3,
+   "backlog_items": 33,
+   "rework_cases": 2,
+   "labour_cost_aud": 14422,
+   "items_per_paid_hour": 54.3,
+   "cost_per_item_aud": 0.992,
+   "ontime_dispatch_pct": 98.71
+  },
+  {
+   "date": "2026-10-29",
+   "items": 15761,
+   "planned_hours": 251.5,
+   "required_hours": 277,
+   "paid_hours": 292.1,
+   "overtime_hours": 31.6,
+   "agency_hours": 44.2,
+   "idle_hours": 12.6,
+   "absences": 1,
+   "backlog_items": 0,
+   "rework_cases": 5,
+   "labour_cost_aud": 15681,
+   "items_per_paid_hour": 54,
+   "cost_per_item_aud": 0.991,
+   "ontime_dispatch_pct": 99.15
+  },
+  {
+   "date": "2026-10-30",
+   "items": 14430,
+   "planned_hours": 228.9,
+   "required_hours": 255.7,
+   "paid_hours": 267.4,
+   "overtime_hours": 38.5,
+   "agency_hours": 48,
+   "idle_hours": 11.4,
+   "absences": 3,
+   "backlog_items": 112,
+   "rework_cases": 2,
+   "labour_cost_aud": 14546,
+   "items_per_paid_hour": 54,
+   "cost_per_item_aud": 1.013,
+   "ontime_dispatch_pct": 98.76
+  },
+  {
+   "date": "2026-10-31",
+   "items": 2871,
+   "planned_hours": 110,
+   "required_hours": 99,
+   "paid_hours": 105.6,
+   "overtime_hours": 8.7,
+   "agency_hours": 14.2,
+   "idle_hours": 5.5,
+   "absences": 2,
+   "backlog_items": 10,
+   "rework_cases": 0,
+   "labour_cost_aud": 5504,
+   "items_per_paid_hour": 27.2,
+   "cost_per_item_aud": 1.928,
+   "ontime_dispatch_pct": 98.72
+  },
+  {
+   "date": "2026-11-02",
+   "items": 15565,
+   "planned_hours": 260.9,
+   "required_hours": 271.5,
+   "paid_hours": 287.1,
+   "overtime_hours": 21,
+   "agency_hours": 34,
+   "idle_hours": 13,
+   "absences": 0,
+   "backlog_items": 0,
+   "rework_cases": 2,
+   "labour_cost_aud": 14938,
+   "items_per_paid_hour": 54.2,
+   "cost_per_item_aud": 0.965,
+   "ontime_dispatch_pct": 98.44
+  },
+  {
+   "date": "2026-11-03",
+   "items": 15161,
+   "planned_hours": 252.2,
+   "required_hours": 258,
+   "paid_hours": 273.1,
+   "overtime_hours": 18,
+   "agency_hours": 30.6,
+   "idle_hours": 12.6,
+   "absences": 0,
+   "backlog_items": 16,
+   "rework_cases": 5,
+   "labour_cost_aud": 14286,
+   "items_per_paid_hour": 55.5,
+   "cost_per_item_aud": 0.938,
+   "ontime_dispatch_pct": 99.1
+  },
+  {
+   "date": "2026-11-04",
+   "items": 13804,
+   "planned_hours": 248.6,
+   "required_hours": 235.2,
+   "paid_hours": 263.5,
+   "overtime_hours": 14.9,
+   "agency_hours": 27.3,
+   "idle_hours": 21.8,
+   "absences": 0,
+   "backlog_items": 4,
+   "rework_cases": 10,
+   "labour_cost_aud": 13935,
+   "items_per_paid_hour": 52.4,
+   "cost_per_item_aud": 0.988,
+   "ontime_dispatch_pct": 98.53
+  },
+  {
+   "date": "2026-11-05",
+   "items": 17749,
+   "planned_hours": 253.1,
+   "required_hours": 315.6,
+   "paid_hours": 321.4,
+   "overtime_hours": 45.6,
+   "agency_hours": 50.6,
+   "idle_hours": 12.7,
+   "absences": 0,
+   "backlog_items": 527,
+   "rework_cases": 3,
+   "labour_cost_aud": 17415,
+   "items_per_paid_hour": 55.2,
+   "cost_per_item_aud": 0.986,
+   "ontime_dispatch_pct": 95.83
+  },
+  {
+   "date": "2026-11-06",
+   "items": 13170,
+   "planned_hours": 233.9,
+   "required_hours": 228.6,
+   "paid_hours": 242.6,
+   "overtime_hours": 22.8,
+   "agency_hours": 34.5,
+   "idle_hours": 11.7,
+   "absences": 3,
+   "backlog_items": 29,
+   "rework_cases": 4,
+   "labour_cost_aud": 12911,
+   "items_per_paid_hour": 54.3,
+   "cost_per_item_aud": 0.977,
+   "ontime_dispatch_pct": 98.7
+  },
+  {
+   "date": "2026-11-07",
+   "items": 2955,
+   "planned_hours": 110,
+   "required_hours": 99,
+   "paid_hours": 116.6,
+   "overtime_hours": 6.6,
+   "agency_hours": 12.1,
+   "idle_hours": 13.2,
+   "absences": 0,
+   "backlog_items": 7,
+   "rework_cases": 0,
+   "labour_cost_aud": 5966,
+   "items_per_paid_hour": 25.3,
+   "cost_per_item_aud": 2.03,
+   "ontime_dispatch_pct": 99.12
+  },
+  {
+   "date": "2026-11-09",
+   "items": 15248,
+   "planned_hours": 268.6,
+   "required_hours": 262.9,
+   "paid_hours": 279,
+   "overtime_hours": 17.1,
+   "agency_hours": 30.5,
+   "idle_hours": 13.4,
+   "absences": 1,
+   "backlog_items": 6,
+   "rework_cases": 1,
+   "labour_cost_aud": 14370,
+   "items_per_paid_hour": 54.6,
+   "cost_per_item_aud": 0.95,
+   "ontime_dispatch_pct": 98.93
+  },
+  {
+   "date": "2026-11-10",
+   "items": 13995,
+   "planned_hours": 260.1,
+   "required_hours": 245.7,
+   "paid_hours": 268.1,
+   "overtime_hours": 15.6,
+   "agency_hours": 28.6,
+   "idle_hours": 17.7,
+   "absences": 1,
+   "backlog_items": 60,
+   "rework_cases": 0,
+   "labour_cost_aud": 13736,
+   "items_per_paid_hour": 52.2,
+   "cost_per_item_aud": 0.992,
+   "ontime_dispatch_pct": 99.06
+  },
+  {
+   "date": "2026-11-11",
+   "items": 17494,
+   "planned_hours": 250.8,
+   "required_hours": 305.2,
+   "paid_hours": 301.7,
+   "overtime_hours": 43.3,
+   "agency_hours": 50.4,
+   "idle_hours": 12.5,
+   "absences": 2,
+   "backlog_items": 1065,
+   "rework_cases": 2,
+   "labour_cost_aud": 16355,
+   "items_per_paid_hour": 58,
+   "cost_per_item_aud": 0.944,
+   "ontime_dispatch_pct": 92.31
+  },
+  {
+   "date": "2026-11-12",
+   "items": 18398,
+   "planned_hours": 272.1,
+   "required_hours": 312.5,
+   "paid_hours": 328.8,
+   "overtime_hours": 36.5,
+   "agency_hours": 50.1,
+   "idle_hours": 13.6,
+   "absences": 0,
+   "backlog_items": 0,
+   "rework_cases": 3,
+   "labour_cost_aud": 17556,
+   "items_per_paid_hour": 56,
+   "cost_per_item_aud": 0.958,
+   "ontime_dispatch_pct": 98.32
+  },
+  {
+   "date": "2026-11-13",
+   "items": 14631,
+   "planned_hours": 236.9,
+   "required_hours": 247.6,
+   "paid_hours": 261.8,
+   "overtime_hours": 27.1,
+   "agency_hours": 39,
+   "idle_hours": 11.8,
+   "absences": 2,
+   "backlog_items": 11,
+   "rework_cases": 3,
+   "labour_cost_aud": 13953,
+   "items_per_paid_hour": 55.9,
+   "cost_per_item_aud": 0.955,
+   "ontime_dispatch_pct": 98.23
+  },
+  {
+   "date": "2026-11-14",
+   "items": 3317,
+   "planned_hours": 110,
+   "required_hours": 99,
+   "paid_hours": 109,
+   "overtime_hours": 6.6,
+   "agency_hours": 12.1,
+   "idle_hours": 7.9,
+   "absences": 1,
+   "backlog_items": 33,
+   "rework_cases": 0,
+   "labour_cost_aud": 5596,
+   "items_per_paid_hour": 30.4,
+   "cost_per_item_aud": 1.698,
+   "ontime_dispatch_pct": 97.57
+  },
+  {
+   "date": "2026-11-16",
+   "items": 15981,
+   "planned_hours": 296.7,
+   "required_hours": 274.2,
+   "paid_hours": 292,
+   "overtime_hours": 25.5,
+   "agency_hours": 52.2,
+   "idle_hours": 14.8,
+   "absences": 5,
+   "backlog_items": 23,
+   "rework_cases": 7,
+   "labour_cost_aud": 15714,
+   "items_per_paid_hour": 54.7,
+   "cost_per_item_aud": 0.976,
+   "ontime_dispatch_pct": 99.28
+  },
+  {
+   "date": "2026-11-17",
+   "items": 15066,
+   "planned_hours": 281.4,
+   "required_hours": 256.8,
+   "paid_hours": 283.1,
+   "overtime_hours": 16.9,
+   "agency_hours": 42.2,
+   "idle_hours": 20.6,
+   "absences": 2,
+   "backlog_items": 0,
+   "rework_cases": 3,
+   "labour_cost_aud": 14784,
+   "items_per_paid_hour": 53.2,
+   "cost_per_item_aud": 0.985,
+   "ontime_dispatch_pct": 99.3
+  },
+  {
+   "date": "2026-11-18",
+   "items": 14376,
+   "planned_hours": 284.8,
+   "required_hours": 249.6,
+   "paid_hours": 279,
+   "overtime_hours": 17.1,
+   "agency_hours": 42.7,
+   "idle_hours": 22.9,
+   "absences": 3,
+   "backlog_items": 0,
+   "rework_cases": 6,
+   "labour_cost_aud": 14734,
+   "items_per_paid_hour": 51.5,
+   "cost_per_item_aud": 1.019,
+   "ontime_dispatch_pct": 98.69
+  },
+  {
+   "date": "2026-11-19",
+   "items": 17015,
+   "planned_hours": 314,
+   "required_hours": 287.9,
+   "paid_hours": 325.2,
+   "overtime_hours": 18.8,
+   "agency_hours": 47.1,
+   "idle_hours": 28.7,
+   "absences": 1,
+   "backlog_items": 0,
+   "rework_cases": 4,
+   "labour_cost_aud": 16983,
+   "items_per_paid_hour": 52.3,
+   "cost_per_item_aud": 1,
+   "ontime_dispatch_pct": 98.92
+  },
+  {
+   "date": "2026-11-20",
+   "items": 14750,
+   "planned_hours": 264.7,
+   "required_hours": 253.8,
+   "paid_hours": 273,
+   "overtime_hours": 15.9,
+   "agency_hours": 39.7,
+   "idle_hours": 15.6,
+   "absences": 1,
+   "backlog_items": 16,
+   "rework_cases": 3,
+   "labour_cost_aud": 14243,
+   "items_per_paid_hour": 54,
+   "cost_per_item_aud": 0.969,
+   "ontime_dispatch_pct": 99.5
+  },
+  {
+   "date": "2026-11-21",
+   "items": 2828,
+   "planned_hours": 110,
+   "required_hours": 99,
+   "paid_hours": 116.6,
+   "overtime_hours": 6.6,
+   "agency_hours": 16.5,
+   "idle_hours": 13.2,
+   "absences": 0,
+   "backlog_items": 20,
+   "rework_cases": 0,
+   "labour_cost_aud": 6016,
+   "items_per_paid_hour": 24.3,
+   "cost_per_item_aud": 2.14,
+   "ontime_dispatch_pct": 98.22
+  },
+  {
+   "date": "2026-11-23",
+   "items": 17307,
+   "planned_hours": 301.3,
+   "required_hours": 303.1,
+   "paid_hours": 321.2,
+   "overtime_hours": 30.4,
+   "agency_hours": 57.5,
+   "idle_hours": 15.1,
+   "absences": 3,
+   "backlog_items": 0,
+   "rework_cases": 2,
+   "labour_cost_aud": 17084,
+   "items_per_paid_hour": 53.9,
+   "cost_per_item_aud": 0.995,
+   "ontime_dispatch_pct": 98.24
+  },
+  {
+   "date": "2026-11-24",
+   "items": 13285,
+   "planned_hours": 279.4,
+   "required_hours": 229,
+   "paid_hours": 296.1,
+   "overtime_hours": 16.8,
+   "agency_hours": 41.9,
+   "idle_hours": 49.2,
+   "absences": 0,
+   "backlog_items": 0,
+   "rework_cases": 4,
+   "labour_cost_aud": 15459,
+   "items_per_paid_hour": 44.9,
+   "cost_per_item_aud": 1.163,
+   "ontime_dispatch_pct": 98.81
+  },
+  {
+   "date": "2026-11-25",
+   "items": 15827,
+   "planned_hours": 285.6,
+   "required_hours": 261.3,
+   "paid_hours": 279.9,
+   "overtime_hours": 17.1,
+   "agency_hours": 42.8,
+   "idle_hours": 15.3,
+   "absences": 3,
+   "backlog_items": 0,
+   "rework_cases": 7,
+   "labour_cost_aud": 14823,
+   "items_per_paid_hour": 56.5,
+   "cost_per_item_aud": 0.929,
+   "ontime_dispatch_pct": 98.56
+  }
+ ],
+ "value": {
+  "window": "29 Nov 2025 – 25 Nov 2026",
+  "operating_days": 300,
+  "total_saving_aud": 238223,
+  "annualised_aud": 238200,
+  "daily_avg_aud": 794,
+  "levers": [
+   {
+    "lever": "Paid roster hours",
+    "unit": "paid hours",
+    "removed": 3142,
+    "rate": 48,
+    "aud": 150329,
+    "business_case": 53280
+   },
+   {
+    "lever": "Overtime premium",
+    "unit": "OT premium-hours",
+    "removed": 2732,
+    "rate": 24,
+    "aud": 65575,
+    "business_case": 53280
+   },
+   {
+    "lever": "Agency premium",
+    "unit": "agency premium-hours",
+    "removed": 1413,
+    "rate": 12,
+    "aud": 16952,
+    "business_case": 31968
+   },
+   {
+    "lever": "Exception rework",
+    "unit": "cases",
+    "removed": 119,
+    "rate": 45,
+    "aud": 5367,
+    "business_case": 9000
+   }
+  ],
+  "business_case": {
+   "roster_hours": 53280,
+   "overtime_premium": 53280,
+   "agency_premium": 31968,
+   "rework": 9000,
+   "total": 147528,
+   "paid_hours_per_day": 246.7,
+   "ot_share": 10,
+   "agency_share": 12,
+   "regular_rate": 48,
+   "rework_cases_per_year": 1000
+  },
+  "cost_per_item_before": 1.035,
+  "cost_per_item_after": 0.968,
+  "items_per_hour_before": 50.8,
+  "items_per_hour_after": 53.2,
+  "paid_hours_before": 70031,
+  "paid_hours_after": 66888,
+  "ot_hours_before": 5652,
+  "ot_hours_after": 2920,
+  "agency_hours_before": 9152,
+  "agency_hours_after": 7739,
+  "idle_hours_before": 4857,
+  "idle_hours_after": 2168,
+  "backlog_before": 12376,
+  "backlog_after": 2083,
+  "rework_before": 877,
+  "rework_after": 758,
+  "ontime_before": 98.59,
+  "saving_pct": 6.47,
+  "daily": [
+   {
+    "date": "2025-11-29",
+    "saving": 307
+   },
+   {
+    "date": "2025-12-01",
+    "saving": 1547
+   },
+   {
+    "date": "2025-12-02",
+    "saving": 1417
+   },
+   {
+    "date": "2025-12-03",
+    "saving": 1934
+   },
+   {
+    "date": "2025-12-04",
+    "saving": 769
+   },
+   {
+    "date": "2025-12-05",
+    "saving": 525
+   },
+   {
+    "date": "2025-12-06",
+    "saving": 306
+   },
+   {
+    "date": "2025-12-08",
+    "saving": 945
+   },
+   {
+    "date": "2025-12-09",
+    "saving": 743
+   },
+   {
+    "date": "2025-12-10",
+    "saving": 2030
+   },
+   {
+    "date": "2025-12-11",
+    "saving": 981
+   },
+   {
+    "date": "2025-12-12",
+    "saving": 255
+   },
+   {
+    "date": "2025-12-13",
+    "saving": 306
+   },
+   {
+    "date": "2025-12-15",
+    "saving": 1142
+   },
+   {
+    "date": "2025-12-16",
+    "saving": 384
+   },
+   {
+    "date": "2025-12-17",
+    "saving": 1270
+   },
+   {
+    "date": "2025-12-18",
+    "saving": 741
+   },
+   {
+    "date": "2025-12-19",
+    "saving": 2923
+   },
+   {
+    "date": "2025-12-20",
+    "saving": 306
+   },
+   {
+    "date": "2025-12-22",
+    "saving": 1580
+   },
+   {
+    "date": "2025-12-23",
+    "saving": 3698
+   },
+   {
+    "date": "2025-12-24",
+    "saving": 5507
+   },
+   {
+    "date": "2025-12-27",
+    "saving": 299
+   },
+   {
+    "date": "2025-12-29",
+    "saving": 5627
+   },
+   {
+    "date": "2025-12-30",
+    "saving": 5147
+   },
+   {
+    "date": "2025-12-31",
+    "saving": 4367
+   },
+   {
+    "date": "2026-01-02",
+    "saving": 2826
+   },
+   {
+    "date": "2026-01-03",
+    "saving": 299
+   },
+   {
+    "date": "2026-01-05",
+    "saving": 1585
+   },
+   {
+    "date": "2026-01-06",
+    "saving": 2043
+   },
+   {
+    "date": "2026-01-07",
+    "saving": 1918
+   },
+   {
+    "date": "2026-01-08",
+    "saving": 5766
+   },
+   {
+    "date": "2026-01-09",
+    "saving": 2864
+   },
+   {
+    "date": "2026-01-10",
+    "saving": 299
+   },
+   {
+    "date": "2026-01-12",
+    "saving": 310
+   },
+   {
+    "date": "2026-01-13",
+    "saving": 92
+   },
+   {
+    "date": "2026-01-14",
+    "saving": 571
+   },
+   {
+    "date": "2026-01-15",
+    "saving": 2225
+   },
+   {
+    "date": "2026-01-16",
+    "saving": 2292
+   },
+   {
+    "date": "2026-01-17",
+    "saving": 299
+   },
+   {
+    "date": "2026-01-19",
+    "saving": 171
+   },
+   {
+    "date": "2026-01-20",
+    "saving": 804
+   },
+   {
+    "date": "2026-01-21",
+    "saving": -131
+   },
+   {
+    "date": "2026-01-22",
+    "saving": 1060
+   },
+   {
+    "date": "2026-01-23",
+    "saving": 429
+   },
+   {
+    "date": "2026-01-24",
+    "saving": 299
+   },
+   {
+    "date": "2026-01-27",
+    "saving": 679
+   },
+   {
+    "date": "2026-01-28",
+    "saving": -669
+   },
+   {
+    "date": "2026-01-29",
+    "saving": 1202
+   },
+   {
+    "date": "2026-01-30",
+    "saving": -54
+   },
+   {
+    "date": "2026-01-31",
+    "saving": 299
+   },
+   {
+    "date": "2026-02-02",
+    "saving": 777
+   },
+   {
+    "date": "2026-02-03",
+    "saving": 1089
+   },
+   {
+    "date": "2026-02-04",
+    "saving": 546
+   },
+   {
+    "date": "2026-02-05",
+    "saving": 936
+   },
+   {
+    "date": "2026-02-06",
+    "saving": 852
+   },
+   {
+    "date": "2026-02-07",
+    "saving": 300
+   },
+   {
+    "date": "2026-02-09",
+    "saving": 530
+   },
+   {
+    "date": "2026-02-10",
+    "saving": 599
+   },
+   {
+    "date": "2026-02-11",
+    "saving": 1642
+   },
+   {
+    "date": "2026-02-12",
+    "saving": 618
+   },
+   {
+    "date": "2026-02-13",
+    "saving": 565
+   },
+   {
+    "date": "2026-02-14",
+    "saving": 299
+   },
+   {
+    "date": "2026-02-16",
+    "saving": 934
+   },
+   {
+    "date": "2026-02-17",
+    "saving": 523
+   },
+   {
+    "date": "2026-02-18",
+    "saving": 2026
+   },
+   {
+    "date": "2026-02-19",
+    "saving": 817
+   },
+   {
+    "date": "2026-02-20",
+    "saving": 410
+   },
+   {
+    "date": "2026-02-21",
+    "saving": 300
+   },
+   {
+    "date": "2026-02-23",
+    "saving": 664
+   },
+   {
+    "date": "2026-02-24",
+    "saving": 929
+   },
+   {
+    "date": "2026-02-25",
+    "saving": 1094
+   },
+   {
+    "date": "2026-02-26",
+    "saving": 1124
+   },
+   {
+    "date": "2026-02-27",
+    "saving": 458
+   },
+   {
+    "date": "2026-02-28",
+    "saving": 299
+   },
+   {
+    "date": "2026-03-02",
+    "saving": 761
+   },
+   {
+    "date": "2026-03-03",
+    "saving": 626
+   },
+   {
+    "date": "2026-03-04",
+    "saving": 532
+   },
+   {
+    "date": "2026-03-05",
+    "saving": 634
+   },
+   {
+    "date": "2026-03-06",
+    "saving": 723
+   },
+   {
+    "date": "2026-03-07",
+    "saving": 299
+   },
+   {
+    "date": "2026-03-09",
+    "saving": 425
+   },
+   {
+    "date": "2026-03-10",
+    "saving": -422
+   },
+   {
+    "date": "2026-03-11",
+    "saving": -658
+   },
+   {
+    "date": "2026-03-12",
+    "saving": 697
+   },
+   {
+    "date": "2026-03-13",
+    "saving": 712
+   },
+   {
+    "date": "2026-03-14",
+    "saving": 300
+   },
+   {
+    "date": "2026-03-16",
+    "saving": 188
+   },
+   {
+    "date": "2026-03-17",
+    "saving": 1257
+   },
+   {
+    "date": "2026-03-18",
+    "saving": 309
+   },
+   {
+    "date": "2026-03-19",
+    "saving": 812
+   },
+   {
+    "date": "2026-03-20",
+    "saving": 190
+   },
+   {
+    "date": "2026-03-21",
+    "saving": 299
+   },
+   {
+    "date": "2026-03-23",
+    "saving": 1025
+   },
+   {
+    "date": "2026-03-24",
+    "saving": 677
+   },
+   {
+    "date": "2026-03-25",
+    "saving": 797
+   },
+   {
+    "date": "2026-03-26",
+    "saving": 904
+   },
+   {
+    "date": "2026-03-27",
+    "saving": 610
+   },
+   {
+    "date": "2026-03-28",
+    "saving": 300
+   },
+   {
+    "date": "2026-03-30",
+    "saving": 1063
+   },
+   {
+    "date": "2026-03-31",
+    "saving": -127
+   },
+   {
+    "date": "2026-04-01",
+    "saving": 1004
+   },
+   {
+    "date": "2026-04-02",
+    "saving": 720
+   },
+   {
+    "date": "2026-04-07",
+    "saving": 844
+   },
+   {
+    "date": "2026-04-08",
+    "saving": 624
+   },
+   {
+    "date": "2026-04-09",
+    "saving": 962
+   },
+   {
+    "date": "2026-04-10",
+    "saving": 575
+   },
+   {
+    "date": "2026-04-11",
+    "saving": 299
+   },
+   {
+    "date": "2026-04-13",
+    "saving": 495
+   },
+   {
+    "date": "2026-04-14",
+    "saving": 886
+   },
+   {
+    "date": "2026-04-15",
+    "saving": 738
+   },
+   {
+    "date": "2026-04-16",
+    "saving": 1073
+   },
+   {
+    "date": "2026-04-17",
+    "saving": 612
+   },
+   {
+    "date": "2026-04-18",
+    "saving": 299
+   },
+   {
+    "date": "2026-04-20",
+    "saving": 589
+   },
+   {
+    "date": "2026-04-21",
+    "saving": 1240
+   },
+   {
+    "date": "2026-04-22",
+    "saving": 499
+   },
+   {
+    "date": "2026-04-23",
+    "saving": 729
+   },
+   {
+    "date": "2026-04-24",
+    "saving": 1041
+   },
+   {
+    "date": "2026-04-27",
+    "saving": 1195
+   },
+   {
+    "date": "2026-04-28",
+    "saving": 573
+   },
+   {
+    "date": "2026-04-29",
+    "saving": 981
+   },
+   {
+    "date": "2026-04-30",
+    "saving": 435
+   },
+   {
+    "date": "2026-05-01",
+    "saving": 600
+   },
+   {
+    "date": "2026-05-02",
+    "saving": 300
+   },
+   {
+    "date": "2026-05-04",
+    "saving": 797
+   },
+   {
+    "date": "2026-05-05",
+    "saving": 1616
+   },
+   {
+    "date": "2026-05-06",
+    "saving": 714
+   },
+   {
+    "date": "2026-05-07",
+    "saving": 701
+   },
+   {
+    "date": "2026-05-08",
+    "saving": 75
+   },
+   {
+    "date": "2026-05-09",
+    "saving": 299
+   },
+   {
+    "date": "2026-05-11",
+    "saving": 482
+   },
+   {
+    "date": "2026-05-12",
+    "saving": 370
+   },
+   {
+    "date": "2026-05-13",
+    "saving": 558
+   },
+   {
+    "date": "2026-05-14",
+    "saving": 916
+   },
+   {
+    "date": "2026-05-15",
+    "saving": 976
+   },
+   {
+    "date": "2026-05-16",
+    "saving": 299
+   },
+   {
+    "date": "2026-05-18",
+    "saving": 1049
+   },
+   {
+    "date": "2026-05-19",
+    "saving": -222
+   },
+   {
+    "date": "2026-05-20",
+    "saving": 708
+   },
+   {
+    "date": "2026-05-21",
+    "saving": 1020
+   },
+   {
+    "date": "2026-05-22",
+    "saving": 568
+   },
+   {
+    "date": "2026-05-23",
+    "saving": 299
+   },
+   {
+    "date": "2026-05-25",
+    "saving": 785
+   },
+   {
+    "date": "2026-05-26",
+    "saving": 1003
+   },
+   {
+    "date": "2026-05-27",
+    "saving": 862
+   },
+   {
+    "date": "2026-05-28",
+    "saving": 646
+   },
+   {
+    "date": "2026-05-29",
+    "saving": 566
+   },
+   {
+    "date": "2026-05-30",
+    "saving": 299
+   },
+   {
+    "date": "2026-06-01",
+    "saving": 1009
+   },
+   {
+    "date": "2026-06-02",
+    "saving": 753
+   },
+   {
+    "date": "2026-06-03",
+    "saving": 728
+   },
+   {
+    "date": "2026-06-04",
+    "saving": 1000
+   },
+   {
+    "date": "2026-06-05",
+    "saving": 814
+   },
+   {
+    "date": "2026-06-06",
+    "saving": 300
+   },
+   {
+    "date": "2026-06-09",
+    "saving": -194
+   },
+   {
+    "date": "2026-06-10",
+    "saving": 667
+   },
+   {
+    "date": "2026-06-11",
+    "saving": 698
+   },
+   {
+    "date": "2026-06-12",
+    "saving": 633
+   },
+   {
+    "date": "2026-06-13",
+    "saving": 299
+   },
+   {
+    "date": "2026-06-15",
+    "saving": 810
+   },
+   {
+    "date": "2026-06-16",
+    "saving": 794
+   },
+   {
+    "date": "2026-06-17",
+    "saving": 562
+   },
+   {
+    "date": "2026-06-18",
+    "saving": 562
+   },
+   {
+    "date": "2026-06-19",
+    "saving": 690
+   },
+   {
+    "date": "2026-06-20",
+    "saving": 299
+   },
+   {
+    "date": "2026-06-22",
+    "saving": 599
+   },
+   {
+    "date": "2026-06-23",
+    "saving": 915
+   },
+   {
+    "date": "2026-06-24",
+    "saving": 713
+   },
+   {
+    "date": "2026-06-25",
+    "saving": 590
+   },
+   {
+    "date": "2026-06-26",
+    "saving": -790
+   },
+   {
+    "date": "2026-06-27",
+    "saving": 300
+   },
+   {
+    "date": "2026-06-29",
+    "saving": 720
+   },
+   {
+    "date": "2026-06-30",
+    "saving": 1008
+   },
+   {
+    "date": "2026-07-01",
+    "saving": 346
+   },
+   {
+    "date": "2026-07-02",
+    "saving": 1081
+   },
+   {
+    "date": "2026-07-03",
+    "saving": 1261
+   },
+   {
+    "date": "2026-07-04",
+    "saving": 299
+   },
+   {
+    "date": "2026-07-06",
+    "saving": 919
+   },
+   {
+    "date": "2026-07-07",
+    "saving": 1599
+   },
+   {
+    "date": "2026-07-08",
+    "saving": 723
+   },
+   {
+    "date": "2026-07-09",
+    "saving": 885
+   },
+   {
+    "date": "2026-07-10",
+    "saving": 1708
+   },
+   {
+    "date": "2026-07-11",
+    "saving": 300
+   },
+   {
+    "date": "2026-07-13",
+    "saving": 518
+   },
+   {
+    "date": "2026-07-14",
+    "saving": 644
+   },
+   {
+    "date": "2026-07-15",
+    "saving": 767
+   },
+   {
+    "date": "2026-07-16",
+    "saving": 971
+   },
+   {
+    "date": "2026-07-17",
+    "saving": 1208
+   },
+   {
+    "date": "2026-07-18",
+    "saving": 299
+   },
+   {
+    "date": "2026-07-20",
+    "saving": 981
+   },
+   {
+    "date": "2026-07-21",
+    "saving": 541
+   },
+   {
+    "date": "2026-07-22",
+    "saving": 2105
+   },
+   {
+    "date": "2026-07-23",
+    "saving": 1527
+   },
+   {
+    "date": "2026-07-24",
+    "saving": 817
+   },
+   {
+    "date": "2026-07-25",
+    "saving": 299
+   },
+   {
+    "date": "2026-07-27",
+    "saving": 1578
+   },
+   {
+    "date": "2026-07-28",
+    "saving": 494
+   },
+   {
+    "date": "2026-07-29",
+    "saving": 966
+   },
+   {
+    "date": "2026-07-30",
+    "saving": 423
+   },
+   {
+    "date": "2026-07-31",
+    "saving": 620
+   },
+   {
+    "date": "2026-08-01",
+    "saving": 299
+   },
+   {
+    "date": "2026-08-03",
+    "saving": 809
+   },
+   {
+    "date": "2026-08-04",
+    "saving": 973
+   },
+   {
+    "date": "2026-08-05",
+    "saving": 616
+   },
+   {
+    "date": "2026-08-06",
+    "saving": 1153
+   },
+   {
+    "date": "2026-08-07",
+    "saving": 430
+   },
+   {
+    "date": "2026-08-08",
+    "saving": 300
+   },
+   {
+    "date": "2026-08-10",
+    "saving": 694
+   },
+   {
+    "date": "2026-08-11",
+    "saving": 893
+   },
+   {
+    "date": "2026-08-12",
+    "saving": 1134
+   },
+   {
+    "date": "2026-08-13",
+    "saving": 937
+   },
+   {
+    "date": "2026-08-14",
+    "saving": 885
+   },
+   {
+    "date": "2026-08-15",
+    "saving": 300
+   },
+   {
+    "date": "2026-08-17",
+    "saving": 937
+   },
+   {
+    "date": "2026-08-18",
+    "saving": 347
+   },
+   {
+    "date": "2026-08-19",
+    "saving": 713
+   },
+   {
+    "date": "2026-08-20",
+    "saving": 812
+   },
+   {
+    "date": "2026-08-21",
+    "saving": 1577
+   },
+   {
+    "date": "2026-08-22",
+    "saving": 300
+   },
+   {
+    "date": "2026-08-24",
+    "saving": 477
+   },
+   {
+    "date": "2026-08-25",
+    "saving": 694
+   },
+   {
+    "date": "2026-08-26",
+    "saving": 761
+   },
+   {
+    "date": "2026-08-27",
+    "saving": 443
+   },
+   {
+    "date": "2026-08-28",
+    "saving": 758
+   },
+   {
+    "date": "2026-08-29",
+    "saving": 299
+   },
+   {
+    "date": "2026-08-31",
+    "saving": 796
+   },
+   {
+    "date": "2026-09-01",
+    "saving": 896
+   },
+   {
+    "date": "2026-09-02",
+    "saving": 973
+   },
+   {
+    "date": "2026-09-03",
+    "saving": 580
+   },
+   {
+    "date": "2026-09-04",
+    "saving": 239
+   },
+   {
+    "date": "2026-09-05",
+    "saving": 299
+   },
+   {
+    "date": "2026-09-07",
+    "saving": 230
+   },
+   {
+    "date": "2026-09-08",
+    "saving": 679
+   },
+   {
+    "date": "2026-09-09",
+    "saving": 1078
+   },
+   {
+    "date": "2026-09-10",
+    "saving": 798
+   },
+   {
+    "date": "2026-09-11",
+    "saving": 812
+   },
+   {
+    "date": "2026-09-12",
+    "saving": 299
+   },
+   {
+    "date": "2026-09-14",
+    "saving": 878
+   },
+   {
+    "date": "2026-09-15",
+    "saving": 409
+   },
+   {
+    "date": "2026-09-16",
+    "saving": 884
+   },
+   {
+    "date": "2026-09-17",
+    "saving": 702
+   },
+   {
+    "date": "2026-09-18",
+    "saving": -35
+   },
+   {
+    "date": "2026-09-19",
+    "saving": 299
+   },
+   {
+    "date": "2026-09-21",
+    "saving": 827
+   },
+   {
+    "date": "2026-09-22",
+    "saving": 749
+   },
+   {
+    "date": "2026-09-23",
+    "saving": 1545
+   },
+   {
+    "date": "2026-09-24",
+    "saving": 1127
+   },
+   {
+    "date": "2026-09-25",
+    "saving": 676
+   },
+   {
+    "date": "2026-09-26",
+    "saving": 299
+   },
+   {
+    "date": "2026-09-28",
+    "saving": 390
+   },
+   {
+    "date": "2026-09-29",
+    "saving": 504
+   },
+   {
+    "date": "2026-09-30",
+    "saving": 1080
+   },
+   {
+    "date": "2026-10-01",
+    "saving": 1156
+   },
+   {
+    "date": "2026-10-02",
+    "saving": 689
+   },
+   {
+    "date": "2026-10-03",
+    "saving": 300
+   },
+   {
+    "date": "2026-10-06",
+    "saving": -7
+   },
+   {
+    "date": "2026-10-07",
+    "saving": 439
+   },
+   {
+    "date": "2026-10-08",
+    "saving": 691
+   },
+   {
+    "date": "2026-10-09",
+    "saving": 1190
+   },
+   {
+    "date": "2026-10-10",
+    "saving": 299
+   },
+   {
+    "date": "2026-10-12",
+    "saving": 135
+   },
+   {
+    "date": "2026-10-13",
+    "saving": 660
+   },
+   {
+    "date": "2026-10-14",
+    "saving": 847
+   },
+   {
+    "date": "2026-10-15",
+    "saving": 768
+   },
+   {
+    "date": "2026-10-16",
+    "saving": 332
+   },
+   {
+    "date": "2026-10-17",
+    "saving": 299
+   },
+   {
+    "date": "2026-10-19",
+    "saving": 1202
+   },
+   {
+    "date": "2026-10-20",
+    "saving": 1109
+   },
+   {
+    "date": "2026-10-21",
+    "saving": 23
+   },
+   {
+    "date": "2026-10-22",
+    "saving": 1079
+   },
+   {
+    "date": "2026-10-23",
+    "saving": 722
+   },
+   {
+    "date": "2026-10-24",
+    "saving": 300
+   },
+   {
+    "date": "2026-10-26",
+    "saving": 835
+   },
+   {
+    "date": "2026-10-27",
+    "saving": 572
+   },
+   {
+    "date": "2026-10-28",
+    "saving": 726
+   },
+   {
+    "date": "2026-10-29",
+    "saving": 898
+   },
+   {
+    "date": "2026-10-30",
+    "saving": 684
+   },
+   {
+    "date": "2026-10-31",
+    "saving": 300
+   },
+   {
+    "date": "2026-11-02",
+    "saving": -155
+   },
+   {
+    "date": "2026-11-03",
+    "saving": 255
+   },
+   {
+    "date": "2026-11-04",
+    "saving": 444
+   },
+   {
+    "date": "2026-11-05",
+    "saving": 567
+   },
+   {
+    "date": "2026-11-06",
+    "saving": 833
+   },
+   {
+    "date": "2026-11-07",
+    "saving": 300
+   },
+   {
+    "date": "2026-11-09",
+    "saving": -105
+   },
+   {
+    "date": "2026-11-10",
+    "saving": 273
+   },
+   {
+    "date": "2026-11-11",
+    "saving": 508
+   },
+   {
+    "date": "2026-11-12",
+    "saving": 766
+   },
+   {
+    "date": "2026-11-13",
+    "saving": 280
+   },
+   {
+    "date": "2026-11-14",
+    "saving": 301
+   },
+   {
+    "date": "2026-11-16",
+    "saving": 719
+   },
+   {
+    "date": "2026-11-17",
+    "saving": 793
+   },
+   {
+    "date": "2026-11-18",
+    "saving": 1230
+   },
+   {
+    "date": "2026-11-19",
+    "saving": 900
+   },
+   {
+    "date": "2026-11-20",
+    "saving": 684
+   },
+   {
+    "date": "2026-11-21",
+    "saving": 306
+   },
+   {
+    "date": "2026-11-23",
+    "saving": 1075
+   },
+   {
+    "date": "2026-11-24",
+    "saving": 887
+   },
+   {
+    "date": "2026-11-25",
+    "saving": 705
+   }
+  ],
+  "implied_realisation_pct": 61.9,
+  "ontime_after": 98.88
+ },
+ "site_coefficients": {
+  "windows": [
+   "04–07",
+   "07–10",
+   "10–13",
+   "13–16",
+   "16–19",
+   "19–22"
+  ],
+  "functions": [
+   "Inbound",
+   "Sortation",
+   "Dock/Yard",
+   "Linehaul",
+   "Last mile"
+  ],
+  "values": [
+   [
+    0.89,
+    0.95,
+    1.02,
+    0.97,
+    0.93,
+    0.96
+   ],
+   [
+    0.97,
+    0.86,
+    0.92,
+    1.13,
+    1.06,
+    0.97
+   ],
+   [
+    0.78,
+    0.88,
+    0.96,
+    1.07,
+    0.98,
+    0.9
+   ],
+   [
+    0.98,
+    0.98,
+    0.98,
+    0.87,
+    0.88,
+    0.93
+   ],
+   [
+    0.89,
+    0.96,
+    1.04,
+    1.06,
+    0.86,
+    0.82
+   ]
+  ]
+ },
+ "realism": {
+  "checks": [
+   {
+    "metric": "Weekly shape: Monday vs Friday index",
+    "synthetic": "1.06 / 0.94",
+    "benchmark": "Mon highest, Fri lowest weekday",
+    "basis": "B2B shippers dispatch early-week; weekend e-commerce orders land Monday",
+    "status": "pass"
+   },
+   {
+    "metric": "Saturday volume vs weekday",
+    "synthetic": "0.19×",
+    "benchmark": "0.15–0.30×",
+    "basis": "B2B depot with limited Saturday e-commerce processing",
+    "status": "pass"
+   },
+   {
+    "metric": "Early-December peak vs September weekday",
+    "synthetic": "1.34×",
+    "benchmark": "1.20–1.45×",
+    "basis": "Australian parcel peak (Black Friday → Christmas) widely reported as the busiest period of the year",
+    "status": "pass"
+   },
+   {
+    "metric": "Cyber Monday 2025 vs September weekday",
+    "synthetic": "1.52×",
+    "benchmark": "1.40–1.90×",
+    "basis": "Single-day peak after Black Friday weekend orders",
+    "status": "pass"
+   },
+   {
+    "metric": "January shutdown trough",
+    "synthetic": "0.86×",
+    "benchmark": "0.80–0.92×",
+    "basis": "B2B customer shutdowns over Christmas/New Year",
+    "status": "pass"
+   },
+   {
+    "metric": "June EOFY uplift",
+    "synthetic": "1.03×",
+    "benchmark": "1.02–1.08×",
+    "basis": "End-of-financial-year B2B stock movements",
+    "status": "pass"
+   },
+   {
+    "metric": "Shock persistence (lag-1 autocorrelation of de-seasonalised volume)",
+    "synthetic": "0.33",
+    "benchmark": "0.15–0.60",
+    "basis": "Unexplained swings carry into the next day (backlog, customer cycles) but fade; neither white noise nor a drawn curve",
+    "status": "pass"
+   },
+   {
+    "metric": "Forecast error: status-quo planner (weekday MAPE)",
+    "synthetic": "9.1%",
+    "benchmark": "6–12%",
+    "basis": "Same-weekday 4-week average; typical of spreadsheet-based depot planning",
+    "status": "pass"
+   },
+   {
+    "metric": "Forecast error: TGE Flow model (weekday MAPE)",
+    "synthetic": "4.3%",
+    "benchmark": "3–6%",
+    "basis": "Not suspiciously perfect: irreducible day-to-day noise remains",
+    "status": "pass"
+   },
+   {
+    "metric": "Unplanned absence rate",
+    "synthetic": "4.4%",
+    "benchmark": "3.5–5.5%",
+    "basis": "Australian absence surveys report ~9–11 days per employee per year; higher in warehousing",
+    "status": "pass"
+   },
+   {
+    "metric": "Overtime share of worked hours",
+    "synthetic": "8.2%",
+    "benchmark": "6–12%",
+    "basis": "Depot overtime absorbs variability and peak; the business case assumes 10%",
+    "status": "pass"
+   },
+   {
+    "metric": "Agency share of worked hours",
+    "synthetic": "12.9%",
+    "benchmark": "10–18%",
+    "basis": "Labour-hire flex layer, higher in peak; the business case assumes 12%",
+    "status": "pass"
+   },
+   {
+    "metric": "Items per labour-hour",
+    "synthetic": "51.5",
+    "benchmark": "50–75",
+    "basis": "Mixed B2B cartons, parcels and freight; manual/semi-automated sort",
+    "status": "pass"
+   },
+   {
+    "metric": "Labour cost per item (AUD)",
+    "synthetic": "$1.02",
+    "benchmark": "$0.65–$1.10",
+    "basis": "A$48 loaded hour (business case) incl. super 12% and NSW payroll tax 5.45%",
+    "status": "pass"
+   },
+   {
+    "metric": "On-time dispatch",
+    "synthetic": "98.6%",
+    "benchmark": "95–99%",
+    "basis": "Linehaul departure / P&D run cut-off adherence",
+    "status": "pass"
+   },
+   {
+    "metric": "Linehaul transit times",
+    "synthetic": "SYD–MEL 10h · SYD–BNE 11h · SYD–ADL 16.5h",
+    "benchmark": "Hume / Pacific / Sturt Hwy road distances",
+    "basis": "880 km, 920 km and 1,375 km road distances at regulated heavy-vehicle speeds incl. breaks",
+    "status": "pass"
+   },
+   {
+    "metric": "Public-holiday calendar",
+    "synthetic": "21 NSW holidays",
+    "benchmark": "Actual NSW gazetted dates",
+    "basis": "Closures and catch-up days placed on the real dates, incl. Easter 2025/2026",
+    "status": "pass"
+   },
+   {
+    "metric": "Severe-weather disruption days",
+    "synthetic": "5 days over 3 summers",
+    "benchmark": "2–5 per summer",
+    "basis": "Sydney summer storm season (Nov–Mar) delaying linehaul",
+    "status": "pass"
+   }
+  ],
+  "business_case_checks": [
+   {
+    "metric": "Average paid hours per operating day",
+    "synthetic": "231 h",
+    "benchmark": "246.7 h (40 FTE × 1,850 h ÷ 300)",
+    "basis": "Business case representative depot",
+    "status": "pass"
+   },
+   {
+    "metric": "Overtime share of paid hours",
+    "synthetic": "8.2%",
+    "benchmark": "10%",
+    "basis": "Business case assumption",
+    "status": "pass"
+   },
+   {
+    "metric": "Agency share of paid hours",
+    "synthetic": "12.9%",
+    "benchmark": "12%",
+    "basis": "Business case assumption",
+    "status": "pass"
+   },
+   {
+    "metric": "Loaded regular hour",
+    "synthetic": "A$48",
+    "benchmark": "A$48",
+    "basis": "Business case assumption; OT +50%, agency +25%",
+    "status": "pass"
+   },
+   {
+    "metric": "Exception rework cases per year",
+    "synthetic": "871",
+    "benchmark": "1,000",
+    "basis": "Business case assumption (A$45 per case)",
+    "status": "pass"
+   },
+   {
+    "metric": "Operating days per year",
+    "synthetic": "303",
+    "benchmark": "300",
+    "basis": "Business case; Mon–Sat less NSW public holidays",
+    "status": "pass"
+   }
+  ],
+  "weekday_index": {
+   "Mon": 1.061,
+   "Tue": 0.997,
+   "Wed": 0.993,
+   "Thu": 1.01,
+   "Fri": 0.939,
+   "Sat": 0.19
+  },
+  "monthly_index_2025": {
+   "Jan": 0.857,
+   "Feb": 0.95,
+   "Mar": 0.964,
+   "Apr": 0.992,
+   "May": 0.983,
+   "Jun": 1.028,
+   "Jul": 0.977,
+   "Aug": 0.957,
+   "Sep": 1.005,
+   "Oct": 1.016,
+   "Nov": 1.112,
+   "Dec": 1.159
+  },
+  "absence_rate_pct": 4.43,
+  "ot_share_pct": 8.16,
+  "agency_share_pct": 12.91,
+  "items_per_labour_hour": 51.5,
+  "cost_per_item": 1.022,
+  "ontime_pct": 98.6,
+  "history_operating_days": 732,
+  "history_calendar_days": 878
+ }
+}

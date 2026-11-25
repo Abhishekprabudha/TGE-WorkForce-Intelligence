@@ -1,0 +1,9 @@
+function,task,driver,rate,source
+Inbound,Unload linehaul / pickup vans (loose),items,330,Time-study style standard; floor-loaded cartons & parcels
+Sortation,Manual/conveyor-assisted sort to run & lane,items,182,"Typical semi-automated depot sort, mixed B2B/B2C"
+Sortation,"Exceptions, rework & returns",exception items,31,"Unreadable labels, mis-sorts, damaged freight, returns (~5% of items)"
+Dock/Yard,Forklift pallets & oversize,pallets,14,LF-licensed forklift handling incl. scan & stage
+Dock/Yard,Trailer marshalling / yard move,trailers,2.5,Yard jockey move incl. seal & check
+Dock/Yard,Dangerous goods / special handling,special items,45,DG segregation & documentation
+Linehaul,Load outbound linehaul trailers,items,287,Load-to-trailer incl. manifest scan
+Last mile,Stage & load-assist P&D delivery runs,items (45% not self-loaded by drivers),249,Run staging in drop sequence; drivers self-load ~55%

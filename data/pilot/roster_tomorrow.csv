@@ -1,0 +1,64 @@
+id,home_function,contract,shift_start,shift_end,planned_ot_hours,skills,licences,tenure_months
+SWD-P001,Sortation,permanent,03:00,11:30,0,Sortation|Inbound|Linehaul,,31
+SWD-P002,Sortation,permanent,03:00,11:30,0,Sortation|Inbound,,46
+SWD-P003,Dock/Yard,permanent,03:00,11:30,0,Dock/Yard|Inbound|Linehaul,Forklift (LF),7
+SWD-P004,Sortation,permanent,03:00,11:30,0,Sortation|Inbound,,86
+SWD-P005,Dock/Yard,permanent,03:00,11:30,0,Dock/Yard|Inbound|Linehaul,Forklift (LF)|DG awareness,3
+SWD-P006,Sortation,permanent,03:00,11:30,0,Sortation|Inbound|Linehaul,,90
+SWD-P007,Dock/Yard,permanent,03:00,11:30,0,Dock/Yard|Linehaul,Forklift (LF),85
+SWD-C001,Dock/Yard,casual,03:00,07:00,0,Dock/Yard,Forklift (LF),64
+SWD-A001,Inbound,agency,03:00,07:00,0,Inbound,,5
+SWD-C002,Sortation,casual,03:00,07:00,0,Sortation|Inbound|Linehaul,,3
+SWD-C003,Dock/Yard,casual,03:00,07:00,0,Dock/Yard|Inbound,Forklift (LF)|DG awareness,91
+SWD-A002,Inbound,agency,03:00,07:00,0,Inbound|Sortation,,5
+SWD-C004,Sortation,casual,03:00,07:00,0,Sortation|Inbound|Linehaul,,6
+SWD-C005,Dock/Yard,casual,03:00,07:00,0,Dock/Yard|Inbound,Forklift (LF),92
+SWD-C006,Sortation,casual,03:00,07:00,0,Sortation|Linehaul|Dock/Yard,Forklift (LF),21
+SWD-C007,Inbound,casual,03:00,07:00,0,Inbound|Sortation|Dock/Yard,Forklift (LF),89
+SWD-A003,Dock/Yard,agency,03:00,07:00,0,Dock/Yard|Sortation,Forklift (LF)|DG awareness,4
+SWD-A004,Sortation,agency,03:00,07:00,0,Sortation,,6
+SWD-A005,Last mile,agency,04:00,08:00,0,Last mile,,4
+SWD-A006,Sortation,agency,04:00,08:00,0,Sortation|Inbound,,4
+SWD-A007,Last mile,agency,04:00,08:00,0,Last mile|Sortation,,2
+SWD-A008,Inbound,agency,04:00,08:00,0,Inbound,,4
+SWD-C008,Sortation,casual,04:00,08:00,0,Sortation|Dock/Yard,Forklift (LF),53
+SWD-A009,Dock/Yard,agency,04:00,08:00,0,Dock/Yard,Forklift (LF)|DG awareness,2
+SWD-A010,Last mile,agency,04:00,08:00,0,Last mile|Sortation,,3
+SWD-A011,Inbound,agency,04:00,08:00,0,Inbound|Sortation,,8
+SWD-C009,Sortation,casual,04:00,08:00,0,Sortation|Inbound,,46
+SWD-A012,Dock/Yard,agency,04:00,08:00,0,Dock/Yard,Forklift (LF),3
+SWD-A013,Last mile,agency,04:00,08:00,0,Last mile|Sortation,,8
+SWD-A014,Dock/Yard,agency,04:00,08:00,0,Dock/Yard,Forklift (LF),6
+SWD-C010,Inbound,casual,04:00,10:30,0,Inbound|Sortation|Last mile,,46
+SWD-A015,Sortation,agency,04:00,08:00,0,Sortation,,0
+SWD-C011,Last mile,casual,05:00,09:00,0,Last mile|Sortation|Dock/Yard,Forklift (LF),55
+SWD-P008,Sortation,permanent,10:00,18:30,0,Sortation|Inbound|Dock/Yard,Forklift (LF),67
+SWD-P009,Sortation,permanent,10:00,18:30,0,Sortation|Inbound|Linehaul,,39
+SWD-P010,Sortation,permanent,10:00,18:30,0,Sortation|Inbound|Linehaul|Last mile|Dock/Yard,Forklift (LF),5
+SWD-P011,Sortation,permanent,10:00,18:30,0,Sortation|Inbound|Linehaul,,39
+SWD-C012,Dock/Yard,casual,10:00,16:30,0,Dock/Yard|Inbound|Linehaul,Forklift (LF),72
+SWD-P012,Sortation,permanent,11:00,22:00,2.5,Sortation|Inbound|Linehaul|Last mile,,88
+SWD-P013,Sortation,permanent,11:00,22:00,2.5,Sortation|Inbound|Linehaul|Last mile|Dock/Yard,Forklift (LF),34
+SWD-P014,Dock/Yard,permanent,11:00,22:00,2.5,Dock/Yard|Inbound,Forklift (LF)|DG awareness,31
+SWD-P015,Inbound,permanent,11:00,19:30,0,Inbound|Sortation|Last mile,,48
+SWD-P016,Sortation,permanent,11:00,19:30,0,Sortation|Inbound,,20
+SWD-P017,Dock/Yard,permanent,11:00,19:30,0,Dock/Yard|Inbound,Forklift (LF)|DG awareness,6
+SWD-P018,Inbound,permanent,11:00,19:30,0,Inbound|Sortation|Last mile,,21
+SWD-P019,Sortation,permanent,11:00,19:30,0,Sortation|Linehaul,,57
+SWD-P020,Linehaul,permanent,11:00,19:30,0,Linehaul|Dock/Yard,,70
+SWD-C013,Inbound,casual,11:00,17:30,0,Inbound|Sortation,,79
+SWD-P021,Linehaul,permanent,12:00,20:30,0,Linehaul|Sortation|Dock/Yard,Forklift (LF),36
+SWD-P022,Dock/Yard,permanent,12:00,20:30,0,Dock/Yard|Inbound,Forklift (LF)|DG awareness,75
+SWD-A016,Sortation,agency,12:00,16:00,0,Sortation,,6
+SWD-A017,Inbound,agency,13:00,17:00,0,Inbound|Sortation,,6
+SWD-C014,Linehaul,casual,14:00,20:30,0,Linehaul|Sortation,,9
+SWD-A018,Sortation,agency,14:00,20:30,0,Sortation|Inbound,,4
+SWD-A019,Dock/Yard,agency,14:00,20:30,0,Dock/Yard|Sortation,Forklift (LF),9
+SWD-A020,Linehaul,agency,14:00,20:30,0,Linehaul,,4
+SWD-A021,Inbound,agency,14:00,18:00,0,Inbound|Sortation,,2
+SWD-A022,Linehaul,agency,15:00,21:30,0,Linehaul|Sortation,,5
+SWD-C015,Linehaul,casual,15:00,21:30,0,Linehaul|Sortation,,47
+SWD-C016,Linehaul,casual,15:00,21:30,0,Linehaul|Sortation,,74
+SWD-A023,Dock/Yard,agency,15:00,21:30,0,Dock/Yard,Forklift (LF)|DG awareness,6
+SWD-C017,Linehaul,casual,16:00,22:30,0,Linehaul|Sortation|Dock/Yard,Forklift (LF),61
+SWD-C018,Linehaul,casual,18:00,22:00,0,Linehaul,,44
